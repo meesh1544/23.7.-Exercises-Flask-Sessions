@@ -1,0 +1,32 @@
+I will create a Go Fish game with Flask. Here’s a general outline of the components and their roles:
+
+1. Initialize Game (initialize_game)
+Purpose: Setup the game by creating and shuffling the deck, dealing cards to the player and computer.
+Inputs: None
+Outputs: Initial game state (player hand, computer hand, deck).
+2. Deal Cards (deal_cards)
+Purpose: Deal a specific number of cards to each player at the start or when a player goes fish and picks a card from the pool.
+Inputs: Number of cards to deal, player type (player or computer)
+Outputs: Updated hands for the player and/or computer, updated deck.
+3. Player's Turn (players_turn)
+Purpose: Handle the player's request for a card from the computer.
+Inputs: Card rank requested by the player.
+Outputs: Determination of whether the computer has the requested card(s) and appropriate hand updates.
+4. Computer's Turn (computers_turn)
+Purpose: The computer decides which card to ask for and requests it from the player.
+Inputs: None (AI logic to choose a card to ask for).
+Outputs: Determination of whether the player has the requested card(s) and appropriate hand updates.
+5. Check for Books (check_for_books)
+Purpose: Check the player's or computer's hand for any sets of four matching ranks (books).
+Inputs: The hand to check.
+Outputs: Updated hand after removing the books, count of books collected.
+6. Check Game Over (check_game_over)
+Purpose: Determine whether the game has ended. The game ends when all 13 books have been collected or one player runs out of cards (and no cards are left in the deck).
+Inputs: Current state of the game (hands, deck, books count).
+Outputs: Boolean indicating game over status, winner if applicable.
+7. Reset Game (reset_game)
+Purpose: Resets the game state to start a new game.
+Inputs: None
+Outputs: None, but resets session variables or game state.
+Let’s illustrate how some of these functions could be initialized within your Flask application, focusing particularly on initializing the game and dealing cards.
+
